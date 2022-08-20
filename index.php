@@ -26,6 +26,41 @@
             </div>
         </div>
 
+        <div class="foods">
+
+        
+            <div class="foods-container">
+                <ul>
+                    <li>
+                        <h3 class="title"> <a href="#">Et Yemeği </a></h3>
+                        <div> <a href="#"> <img src="image/card.jpg" alt=""></a> </div>
+                        <div class="footer">
+                                <a>Tarih: 22/08/2022</a>
+                                <a>Şef: Çınar Sak</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="foods-container">
+                <ul>
+                    <li>
+                        <h3 class="title"> <a href="#">Et Yemeği </a></h3>
+                        <div> <a href="#"> <img src="image/card.jpg" alt=""></a> </div>
+                        <div class="footer">
+                                <a>Tarih: 22/08/2022</a>
+                                <a>Şef: Çınar Sak</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        
+
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cinzel&family=Lato&family=Michroma&family=Silkscreen&display=swap');
 body{
     margin: 0;
     padding: 0;
@@ -20,6 +20,11 @@ a{
     
     
 }
+
+
+a{
+    color: #fff;
+} 
 
 .navbar{
     display: flex;
@@ -49,4 +54,33 @@ a{
 .header-image .image-header-container{
     text-align: center;
 }
+
+
+.foods .foods-container{
+    color: #fff;
+    display: flex;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    
+    
+}
+
+.foods{
+    display: flex;
+    flex-direction: row;
+}
+
+.foods .foods-container .footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.foods .foods-container .footer li{
+    
+    margin: .5rem;
+    
+}
+
+
 
