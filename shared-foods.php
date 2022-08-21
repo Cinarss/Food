@@ -1,3 +1,13 @@
+<?php 
+ob_start();
+session_start();
+include "admin/connect.php";
+include "access.php";
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

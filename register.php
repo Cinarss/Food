@@ -1,3 +1,5 @@
+<?php include "admin/connect.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,28 +12,40 @@
 <body>
 
 
-<div class="form">
+
+
+<form action="admin/admin.php" method="POST">
+
+
+  <div class="form">
+
       <div class="title">Welcome</div>
+
       <div class="subtitle">Let's create your account!</div>
       <div class="input-container ic1">
-        <input id="firstname" class="input" type="text" placeholder=" " />
+        <input id="firstname" class="input" name="username" require="" type="text" placeholder=" " />
         <div class="cut"></div>
-        <label for="firstname" class="placeholder">First name</label>
+        <label for="username" class="placeholder">Username</label>
       </div>
+
       <div class="input-container ic2">
-        <input id="lastname" class="input" type="text" placeholder=" " />
+        <input id="lastname" class="input" name="email" require="" type="email" placeholder=" " />
         <div class="cut"></div>
-        <label for="lastname" class="placeholder">Last name</label>
+        <label for="email" class="placeholder">Email</label>
       </div>
+
+
       <div class="input-container ic2">
-        <input id="email" class="input" type="text" placeholder=" " />
+        <input id="email" class="input" name="password" require="" type="password" placeholder=" " />
         <div class="cut cut-short"></div>
-        <label for="email" class="placeholder">Email</>
+        <label for="password" class="placeholder">Password</label>
       </div>
-      <button type="text" class="submit">submit</button>
+
+
+     <button type="submit" name="register" class="submit">submit</button>
       <p class="goLoginPage">Do you have a account?<a href="login.php"> <strong>Login</strong></a></p>
     </div>
-
+  </form>
 
 </body>
 </html>
