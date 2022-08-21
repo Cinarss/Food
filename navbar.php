@@ -16,7 +16,7 @@
                     <a href="foods.php"><li>Foods</li></a>
                     <a href="share-food.php"><li>Share Food</li></a>
                     <a href="shared-foods.php"><li>My Foods</li></a>
-                    <a href=""><li>Log In</li></a>
+                    <a href="register.php"><li>Sign In</li></a>
                 </ul>
             </div>
         </div>

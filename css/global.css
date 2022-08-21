@@ -219,3 +219,29 @@ textarea {
     font-size: 1.2rem;
 
   }
+
+
+
+  .footer-deta{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    padding: 1.7rem 0 1.7rem 0;
+    width: 100%;
+    background-color: #00040A;
+    
+  }
+
+  .footer-deta-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .footer-deta .footer-deta-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }

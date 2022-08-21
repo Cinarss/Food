@@ -18,6 +18,9 @@
   <textarea name="making" class="feedback-input" placeholder="Making"></textarea>
   <input type="submit" value="Share"/>
 </form>
+
+
+<?php include "footer.php"; ?>
     
 </body>
 </html>

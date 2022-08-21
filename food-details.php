@@ -25,5 +25,7 @@
             <p>Gönderim Tarihi:22/08/2022</p>
         </div>
     </div>
+
+    <?php include "footer.php"; ?>
 </body>
 </html>
