@@ -8,17 +8,7 @@
     <title>Home Page</title>
 </head>
 <body>
-        <div class="header">
-            <div class="header-container">
-                <ul class="navbar">
-                    <a href=""><li>Home Page</li></a>
-                    <a href=""><li>Foods</li></a>
-                    <a href=""><li>Share Food</li></a>
-                    <a href=""><li>My Foods</li></a>
-                    <a href=""><li>Log In</li></a>
-                </ul>
-            </div>
-        </div>
+        <?php include "navbar.php"; ?>
 
         <div class="header-image">
             <div class="image-header-container">
@@ -43,7 +33,12 @@
             </div>
 
 
-            <div class="foods-container">
+            <?php 
+
+                for ($i=0; $i < 10; $i++) { ?>
+                    
+                
+                    <div class="foods-container">
                 <ul>
                     <li>
                         <h3 class="title"> <a href="#">Et Yemeği </a></h3>
@@ -55,6 +50,9 @@
                     </li>
                 </ul>
             </div>
+
+            <?php }?>
+            
 
 
         </div>

@@ -56,18 +56,15 @@ a{
 }
 
 
-.foods .foods-container{
-    color: #fff;
+
+
+.foods{
+    justify-content: center;
     display: flex;
     font-family: 'Lato', sans-serif;
     text-align: center;
-    
-    
-}
-
-.foods{
-    display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 3rem 2rem ;
 }
 
 .foods .foods-container .footer{
@@ -83,4 +80,142 @@ a{
 }
 
 
+.foods-rate .foods-rate-title{
+    color: #fff;
+    text-align: center;
+}
 
+.foods-rate{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem;
+  justify-content: center;
+}
+
+.categories{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form { max-width:420px; margin:50px auto; }
+
+.feedback-input {
+  color:white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #CC6666;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #CC4949; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#CC6666;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#CC4949; }
+
+
+#customers {
+   
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 65%;
+    
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr {background-color: #fff; transition: .5s;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  #customers a{
+    
+   
+    padding: .7rem;
+    border-radius: .5rem;
+    margin: 1rem;
+  }
+
+  #customers #delete{
+    background-color: #CC4949;
+  }
+
+  #customers #edit{
+    background-color: #118cff;
+  }
+
+  .food-table{
+   margin: 5rem;
+   display: flex;
+   justify-content: center;
+  }
+
+  .details{
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+    margin: 2rem;
+  }
+
+  .details .details-title{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+ 
+  .details-footer{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.1rem;
+    gap: 1rem;
+    
+  }
+
+
+
+  .details .deta{
+    font-size: 1.2rem;
+
+  }
