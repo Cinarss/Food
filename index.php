@@ -1,3 +1,16 @@
+<?php 
+ob_start();
+session_start();
+include "admin/connect.php";
+
+
+$food=$db->prepare("SELECT * FROM food");
+$food->execute();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,33 +32,34 @@
         <div class="foods">
 
         
-            <div class="foods-container">
-                <ul>
-                    <li>
-                        <h3 class="title"> <a href="#">Et Yemeği </a></h3>
-                        <div> <a href="#"> <img src="image/card.jpg" alt=""></a> </div>
-                        <div class="footer">
-                                <a>Tarih: 22/08/2022</a>
-                                <a>Şef: Çınar Sak</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            
 
 
             <?php 
 
-                for ($i=0; $i < 10; $i++) { ?>
+                while($foodGet=$food->fetch(PDO::FETCH_ASSOC)) { ?>
                     
                 
                     <div class="foods-container">
                 <ul>
                     <li>
-                        <h3 class="title"> <a href="#">Et Yemeği </a></h3>
-                        <div> <a href="#"> <img src="image/card.jpg" alt=""></a> </div>
+                        <h3 class="title"> <a href="#"><?php echo $foodGet["name"]?> </a></h3>
+                        <div> <a href="#"> <img width="350" height="250" src="<?php echo $foodGet["image"]?>" alt=""></a> </div>
                         <div class="footer">
-                                <a>Tarih: 22/08/2022</a>
-                                <a>Şef: Çınar Sak</a>
+                             <?php 
+                             $user_id = $foodGet["user_id"];
+
+
+                             $user=$db->prepare("SELECT * FROM user where id=:id");
+                             $user->execute(array(
+                                 "id" => $user_id
+                             ));
+                             
+                             $userGet=$user->fetch(PDO::FETCH_ASSOC);
+                             
+                             ?>
+                                <a>Tarih: <?php echo $foodGet["time"]?></a>
+                                <a>Şef: <?php echo $userGet["username"]?></a>
                         </div>
                     </li>
                 </ul>

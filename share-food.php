@@ -5,6 +5,7 @@ include "admin/connect.php";
 include "access.php";
 
 
+
 ?>
 
 
@@ -21,11 +22,12 @@ include "access.php";
 
     <?php include "navbar.php"; ?>
 
-    <form action="admin/admin.php" method="POST">      
+    <form action="admin/admin.php" method="POST" enctype="multipart/form-data"  >      
   <input name="image" type="file" class="feedback-input" placeholder="Image" />   
   <input name="name" type="text" class="feedback-input" placeholder="Food Name" />
   <textarea name="materials" class="feedback-input" placeholder="Materials"></textarea>
   <textarea name="making" class="feedback-input" placeholder="Making"></textarea>
+  <input type="hidden" name="user_id" value="<?php echo $userGet['id'] ?>">
   <input type="submit" name="shareFood" value="Share"/>
 </form>
 

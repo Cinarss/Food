@@ -94,6 +94,11 @@ a{
   justify-content: center;
 }
 
+.foods-rate  img{
+  width: 450px;
+  height: 250px;
+}
+
 .categories{
     color: #fff;
     text-align: center;

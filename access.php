@@ -8,6 +8,7 @@ $user->execute(array(
 ));
 
 $count = $user->rowCount();
+$userGet=$user->fetch(PDO::FETCH_ASSOC);
 
 if($count == 0){
     Header("Location:login.php?basarisiz");

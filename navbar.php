@@ -1,5 +1,10 @@
+<?php
+ob_start();
+session_start();
 
+include "admin/connect.php";
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +24,15 @@
                     <a href="foods.php"><li>Foods</li></a>
                     <a href="share-food.php"><li>Share Food</li></a>
                     <a href="shared-foods.php"><li>My Foods</li></a>
-                    <a href="register.php"><li>Sign Up</li></a>
+                    <?php 
+                    if(!isset($_SESSION["email"])){?>
+                    <a href="login.php"><li>Sign In</li></a>
+                    <?php } else{?>
+                        
+                        <a href="logout.php"><li>Log Out</li></a>
+                        
+                        <?php }?>
+                    
                 </ul>
             </div>
         </div>

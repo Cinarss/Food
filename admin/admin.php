@@ -56,10 +56,21 @@ if(isset($_POST["login"])){
 
 if(isset($_POST["shareFood"])){
 
-
+    $uploads_dir = '../dimg';
+    @$tmp_name = $_FILES['image']["tmp_name"];
+    @$name = $_FILES['image']["name"];
+    //resmin isminin benzersiz olması
+    $benzersizsayi1=rand(20000,32000);
+    $benzersizsayi2=rand(20000,32000);
+    $benzersizsayi3=rand(20000,32000);
+    $benzersizsayi4=rand(20000,32000);	
+    $benzersizad=$benzersizsayi1.$benzersizsayi2.$benzersizsayi3.$benzersizsayi4;
+    $refimgyol=substr($uploads_dir, 3)."/".$benzersizad.$name;
+    @move_uploaded_file($tmp_name, "$uploads_dir/$benzersizad$name");
     
 
     $food=$db->prepare("INSERT INTO food SET
+    user_id=:user_id,
     image=:image,
     name=:name,
     materials=:materials,
@@ -67,7 +78,8 @@ if(isset($_POST["shareFood"])){
     ");
 
     $update=$food->execute(array(
-        "image" => $_POST["image"],
+        "user_id" => $_POST["user_id"],
+        "image" => $refimgyol,
         "name" => $_POST["name"],
         "materials" => $_POST["materials"],
         "making" => $_POST["making"]
