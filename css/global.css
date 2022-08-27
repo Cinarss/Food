@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Cinzel&family=Lato&family=Michroma&family=Silkscreen&display=swap');
 body{
     margin: 0;
+    
     padding: 0;
     background-color: #000;
     
@@ -217,6 +218,7 @@ textarea {
 
   .details .deta{
     font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
 
   }
 

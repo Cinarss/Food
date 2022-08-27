@@ -54,6 +54,36 @@ if(isset($_POST["login"])){
 
 
 
+if(isset($_POST["shareFood"])){
+
+
+    
+
+    $food=$db->prepare("INSERT INTO food SET
+    image=:image,
+    name=:name,
+    materials=:materials,
+    making=:making
+    ");
+
+    $update=$food->execute(array(
+        "image" => $_POST["image"],
+        "name" => $_POST["name"],
+        "materials" => $_POST["materials"],
+        "making" => $_POST["making"]
+    ));
+
+    if($update){
+        Header("Location:../index.php?status=okay");
+        exit;
+    }else{
+        Header("Location:../index.php?status=nope");
+        exit;
+    }
+    
+}
+
+
 
 
 ?>

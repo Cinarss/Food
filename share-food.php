@@ -21,12 +21,12 @@ include "access.php";
 
     <?php include "navbar.php"; ?>
 
-    <form>      
+    <form action="admin/admin.php" method="POST">      
   <input name="image" type="file" class="feedback-input" placeholder="Image" />   
-  <input name="foodName" type="text" class="feedback-input" placeholder="Food Name" />
+  <input name="name" type="text" class="feedback-input" placeholder="Food Name" />
   <textarea name="materials" class="feedback-input" placeholder="Materials"></textarea>
   <textarea name="making" class="feedback-input" placeholder="Making"></textarea>
-  <input type="submit" value="Share"/>
+  <input type="submit" name="shareFood" value="Share"/>
 </form>
 
 
