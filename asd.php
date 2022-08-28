@@ -9,8 +9,6 @@ $user->execute(array(
     "email" => $_SESSION["email"]
 ));
 
-$userGet=$user->fetch(PDO::FETCH_ASSOC);
-
 ?>
 
 
@@ -31,11 +29,17 @@ $userGet=$user->fetch(PDO::FETCH_ASSOC);
 <div class="food-table">
 
     <table id="customers">
-    
+        <?php 
+        while($userGet=$user->fetch(PDO::FETCH_ASSOC)){?>
         
         <?php 
+        
+            $food_user = $userGet["id"];
 
-         $food_user = $userGet["id"];
+
+        ?>
+        
+        <?php 
         
             $food_user = $userGet["id"];
 
@@ -44,21 +48,20 @@ $userGet=$user->fetch(PDO::FETCH_ASSOC);
                 "user_id" => $food_user
             ));
             
+            $foodGet=$food->fetch(PDO::FETCH_ASSOC);
 
         ?>
 
-        <?php 
-        while($foodGet=$food->fetch(PDO::FETCH_ASSOC)){
-        ?>
+
         <tr>
             <th>Food Name</th>
             <th></th>
             <th></th>
         </tr>
-        <tr>    
+        <tr>
             <td><?php echo $foodGet["name"]?></td>
-            <td><a href="food_edit.php?id=<?php echo $foodGet["id"]?>" id="edit">Düzenle</a></td>
-            <td><a href="admin/admin.php?id=<?php echo $foodGet["id"]?>&delete=okay" id="delete">Delete</a></td>
+            <td><a href="" id="edit">Düzenle</a></td>
+            <td><a href="" id="delete">Delete</a></td>
         </tr>
 
         <?php } ?>

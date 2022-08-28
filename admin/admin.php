@@ -96,6 +96,65 @@ if(isset($_POST["shareFood"])){
 }
 
 
+if($_GET["delete"] == "okay"){
+    $delete=$db->prepare("DELETE FROM food where id=:id");
+    $control=$delete->execute(array(
+        "id" => $_GET["id"]
+    ));
 
+    if($control){
+        Header("Location:../shared-foods.php?delete=okay");
+        exit;
+
+    }else{
+
+        Header("Location:../shared-foods.php?delete=nope");
+        exit;
+
+    }
+}
+
+
+if(isset($_POST["foodEdit"])){
+
+    $uploads_dir = '../dimg';
+      
+        @$tmp_name = $_FILES['image']["tmp_name"];
+        @$name = $_FILES['image']["name"];
+  
+        $id= $_POST["id"];
+  
+        $benzersizsayi4=rand(20000,32000);
+        $refimgyol=substr($uploads_dir, 3)."/".$benzersizsayi4.$name;
+      
+        @move_uploaded_file($tmp_name, "$uploads_dir/$benzersizsayi4$name");
+
+        $edit=$db->prepare("UPDATE food SET
+            image=:image,
+            name=:name,
+            materials=:materials,
+            making=:making
+        WHERE id = {$_POST["id"]} ");
+
+        $update=$edit->execute(array(
+            "image" => $refimgyol,
+            "name" => $_POST["name"],
+            "materials" => $_POST["materials"],
+            "making" => $_POST["making"]
+        ));
+
+        if($update){
+          $resimsilunlink=$_POST['eski_yol'];
+          unlink("../$resimsilunlink");
+
+          Header("Location:../food_edit.php?id=$id?status=okay");
+          exit;
+
+        }else{
+          Header("Location:../food_edit.php?id=$id?status=nope");
+          exit;
+        }
+
+}
 
 ?>
