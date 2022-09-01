@@ -5,6 +5,8 @@ include "admin/connect.php";
 include "access.php";
 
 
+$cate=$db->prepare("SELECT * FROM kategori");
+$cate->execute();
 
 ?>
 
@@ -25,6 +27,22 @@ include "access.php";
     <form action="admin/admin.php" method="POST" enctype="multipart/form-data"  >      
   <input name="image" type="file" class="feedback-input" placeholder="Image" />   
   <input name="name" type="text" class="feedback-input" placeholder="Food Name" />
+  <div class="cate">
+                    <select class="select2_multiple form-control" required="" name="cate_id" >
+                     <?php 
+
+                     while($cateGet=$cate->fetch(PDO::FETCH_ASSOC)) {
+
+                       $cate_id = $cateGet['cate_id'];
+
+                       ?>
+
+                       <option  value="<?php echo $cateGet['cate_id']; ?>" ><?php echo $cateGet['name']; ?></option>
+
+                       <?php } ?>
+
+                     </select>
+                     </div>
   <textarea name="materials" class="feedback-input" placeholder="Materials"></textarea>
   <textarea name="making" class="feedback-input" placeholder="Making"></textarea>
   <input type="hidden" name="user_id" value="<?php echo $userGet['id'] ?>">
@@ -32,7 +50,6 @@ include "access.php";
 </form>
 
 
-<?php include "footer.php"; ?>
     
 </body>
 </html>

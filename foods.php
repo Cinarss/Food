@@ -3,8 +3,8 @@ ob_start();
 session_start();
 include "admin/connect.php";
 
-$food=$db->prepare("SELECT * FROM food");
-$food->execute();
+$cate=$db->prepare("SELECT * FROM kategori");
+$cate->execute();
 
 
 
@@ -27,11 +27,11 @@ $food->execute();
 
     <div class="foods-rate">
     <?php
-    while($foodGet=$food->fetch(PDO::FETCH_ASSOC)) { ?>
+    while($cateGet=$cate->fetch(PDO::FETCH_ASSOC)) { ?>
         
             <div class="foods-rate-container">
-                <a href=""><h2 class="foods-rate-title"><?php echo $foodGet["name"]?></h2></a>
-                <div class="foods-rate-image"><a href=""><img width="350" height="250" src="<?php echo $foodGet["image"]?>" alt=""></a></div>
+                <a href=""><h2 class="foods-rate-title"><?php echo $cateGet["name"]?></h2></a>
+                <div class="foods-rate-image"><a href="<?php echo $cateGet["link"]?>"><img width="350" height="250" src="<?php echo $cateGet["image"]?>" alt=""></a></div>
 
             </div>
         
@@ -41,6 +41,5 @@ $food->execute();
     </div>
 
 
-    <?php include "footer.php"; ?>
 </body>
 </html>

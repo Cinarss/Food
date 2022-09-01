@@ -252,3 +252,8 @@ textarea {
     flex-direction: column;
     gap: .5rem;
   }
+
+  .cate select{
+    font-size: 1.5rem;
+    
+  }

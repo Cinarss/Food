@@ -10,7 +10,13 @@ $food->execute(array(
     "id" => $_GET["id"]
 ));
 
+$food_id = $_GET["id"];
+
 $foodGet=$food->fetch(PDO::FETCH_ASSOC);
+
+$cate=$db->prepare("SELECT * FROM kategori");
+$cate->execute();
+
 
 
 ?>
@@ -35,6 +41,24 @@ $foodGet=$food->fetch(PDO::FETCH_ASSOC);
     <input type="hidden" name="eski_yol" value="<?php echo $foodGet['image']; ?>">
   <input name="image" type="file" class="feedback-input" placeholder="Image"  />   
   <input name="name" type="text" class="feedback-input" placeholder="Food Name" value="<?php echo $foodGet["name"];?> " />
+  <div class="cate">
+                    <select class="select2_multiple form-control"  required="" name="cate_id" >
+                     <?php 
+                     
+
+                     while($cateGet=$cate->fetch(PDO::FETCH_ASSOC)) {
+
+                       $cate_id = $cateGet['cate_id'];
+
+                       ?>
+
+                        <option <?php if ($cate_id==$food_id) { echo "selected='select'"; } ?> value="<?php echo $foodGet['cate_id']; ?>"><?php echo $cateGet['name']; ?></option>
+
+
+                       <?php } ?>
+
+                     </select>
+                     </div>
   <textarea name="materials" class="feedback-input" placeholder="Materials" ><?php echo $foodGet["materials"];?></textarea>
   <textarea name="making" class="feedback-input" placeholder="Making"  ><?php echo $foodGet["making"];?></textarea>
   <input type="hidden" name="id" value="<?php echo $foodGet['id'] ?>">

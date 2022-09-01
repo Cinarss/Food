@@ -71,6 +71,7 @@ if(isset($_POST["shareFood"])){
 
     $food=$db->prepare("INSERT INTO food SET
     user_id=:user_id,
+    cate_id=:cate_id,
     image=:image,
     name=:name,
     materials=:materials,
@@ -79,6 +80,7 @@ if(isset($_POST["shareFood"])){
 
     $update=$food->execute(array(
         "user_id" => $_POST["user_id"],
+        "cate_id" => $_POST["cate_id"],
         "image" => $refimgyol,
         "name" => $_POST["name"],
         "materials" => $_POST["materials"],
@@ -132,12 +134,14 @@ if(isset($_POST["foodEdit"])){
         $edit=$db->prepare("UPDATE food SET
             image=:image,
             name=:name,
+            cate_id=:cate_id,
             materials=:materials,
             making=:making
         WHERE id = {$_POST["id"]} ");
 
         $update=$edit->execute(array(
             "image" => $refimgyol,
+            "cate_id" => $_POST["cate_id"],
             "name" => $_POST["name"],
             "materials" => $_POST["materials"],
             "making" => $_POST["making"]
