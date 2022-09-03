@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Cinzel&family=Lato&family=Michroma&family=Silkscreen&display=swap');
 body{
     margin: 0;
-    
+    font-family: 'Lato', sans-serif;
     padding: 0;
     background-color: #000;
     
@@ -257,3 +257,41 @@ textarea {
     font-size: 1.5rem;
     
   }
+
+.header-details {
+  color: #fff;
+  margin: 5rem;
+
+}
+
+.details-container{
+  margin: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-details h1{
+  text-align: center;
+}
+
+.header-details img{
+  margin: 3rem 0;
+  width: 350;
+  height: 250;
+  
+}
+
+.header-details .image{
+  text-align: center;
+}
+
+.header-details .making{
+  margin: 3rem 0;
+}
+
+.header-details .footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}

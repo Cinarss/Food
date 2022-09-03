@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 include "connect.php";
+include "../function.php";
 
 
 
@@ -68,6 +69,7 @@ if(isset($_POST["shareFood"])){
     $refimgyol=substr($uploads_dir, 3)."/".$benzersizad.$name;
     @move_uploaded_file($tmp_name, "$uploads_dir/$benzersizad$name");
     
+    $food_seourl=seo($_POST["name"]);
 
     $food=$db->prepare("INSERT INTO food SET
     user_id=:user_id,
@@ -75,7 +77,8 @@ if(isset($_POST["shareFood"])){
     image=:image,
     name=:name,
     materials=:materials,
-    making=:making
+    making=:making,
+    food_seourl=:food_seourl
     ");
 
     $update=$food->execute(array(
@@ -84,7 +87,8 @@ if(isset($_POST["shareFood"])){
         "image" => $refimgyol,
         "name" => $_POST["name"],
         "materials" => $_POST["materials"],
-        "making" => $_POST["making"]
+        "making" => $_POST["making"],
+        "food_seourl" => $food_seourl
     ));
 
     if($update){

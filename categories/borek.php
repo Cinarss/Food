@@ -51,7 +51,8 @@ $food->execute(array(
         
             <div class="foods-rate-container">
                 <a href=""><h2 class="foods-rate-title"><?php echo $foodGet["name"]?></h2></a>
-                <div class="foods-rate-image"><a href=""><img width="350" height="250" src="../<?php echo $foodGet["image"]?>" alt=""></a></div>
+                <div class="foods-rate-image"><a href="../food-<?php echo $foodGet["food_seourl"]; ?>"><img width="350" height="250" src="../<?php echo $foodGet["image"]?>" alt=""></a></div>
+                
 
             </div>
         
